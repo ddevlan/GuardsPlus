@@ -13,6 +13,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -36,6 +40,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
             <scope>provided</scope>
+        </dependency>
+        <!--Pastebin-->
+        <dependency>
+            <groupId>com.github.marcoacierno</groupId>
+            <artifactId>pastebin-java-api</artifactId>
+            <version>v0.2.1</version>
         </dependency>
     </dependencies>
 
