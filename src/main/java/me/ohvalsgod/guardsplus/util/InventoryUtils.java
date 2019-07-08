@@ -52,8 +52,8 @@ public class InventoryUtils {
             dataOutput.writeInt(items.length);
 
             // Save every element in the list
-            for (int i = 0; i < items.length; i++) {
-                dataOutput.writeObject(items[i]);
+            for (ItemStack item : items) {
+                dataOutput.writeObject(item);
             }
 
             // Serialize that array
@@ -73,8 +73,8 @@ public class InventoryUtils {
             dataOutput.writeInt(items.size());
 
             // Save every element in the list
-            for (int i = 0; i < items.size(); i++) {
-                dataOutput.writeObject(items.get(i));
+            for (ItemStack item : items) {
+                dataOutput.writeObject(item);
             }
 
             // Serialize that array

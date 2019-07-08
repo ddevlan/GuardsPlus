@@ -1,7 +1,6 @@
 package me.ohvalsgod.guardsplus.config;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -15,7 +14,6 @@ public class GuardsConfig {
     private File file;
     @Getter
     private FileConfiguration configuration;
-    @Setter
     private String root;
 
     public GuardsConfig(String name, JavaPlugin plugin) {
@@ -63,7 +61,7 @@ public class GuardsConfig {
         return configuration.getIntegerList(this.root.isEmpty() ? path:this.root + "." + path);
     }
 
-    public GuardsConfig setRoot(String root) {
+    public GuardsConfig root(String root) {
         this.root = root;
         return this;
     }
