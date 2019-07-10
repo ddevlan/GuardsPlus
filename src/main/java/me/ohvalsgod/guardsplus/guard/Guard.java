@@ -2,6 +2,7 @@ package me.ohvalsgod.guardsplus.guard;
 
 import lombok.Getter;
 import lombok.Setter;
+import me.ohvalsgod.guardsplus.GuardsPlus;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -37,9 +38,14 @@ public class Guard {
     }
 
     public void toggleDuty() {
-        onDuty = !onDuty;
-        swapInventory();
-        //TODO send broadcast
+        if (toPlayer() != null) {
+            onDuty = !onDuty;
+            swapInventory();
+            Bukkit.getServer().broadcastMessage(
+                    GuardsPlus.getInstance().getLangConfig().getString("guard.toggle-duty")
+                            .replace("{guard}", toPlayer().getName())
+                            .replace("{duty}", onDuty ? "on":"off"));
+        }
     }
 
     public Player toPlayer() {

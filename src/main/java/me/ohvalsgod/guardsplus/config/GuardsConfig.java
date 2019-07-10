@@ -49,7 +49,6 @@ public class GuardsConfig {
     }
 
     public Boolean getBoolean(String path) {
-        //TODO: format booleans for yes/no y/n t/f etc.
         return configuration.getBoolean(this.root.isEmpty() ? path:this.root + "." + path);
     }
 
